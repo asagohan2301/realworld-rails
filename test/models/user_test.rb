@@ -7,7 +7,12 @@ class UserTest < ActiveSupport::TestCase
 
   # setupメソッド内に書かれた処理は、各テストが走る直前に実行される
   def setup
-    @user = User.new(name: "test-name", email: "test@email", password: "test-password")
+    @user = User.new(
+      name: "test-name",
+      email: "test@email",
+      password: "testpassword",
+      password_confirmation: "testpassword"
+    )
   end
 
   test "should be valid" do
@@ -26,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "password should be present" do
-    @user.password = "   "
+    @user.password = @user.password_confirmation = " " * 6
     assert_not @user.valid?
   end
 
@@ -40,13 +45,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "password should be too short" do
-    @user.password = "aaaaa"
+  test "password should not be too short" do
+    @user.password = @user.password_confirmation = "a" * 7
     assert_not @user.valid?
   end
 
-  test "password should be too long" do
-    @user.password = "a" * 21
+  test "password should not be too long" do
+    @user.password = @user.password_confirmation = "a" * 21
     assert_not @user.valid?
   end
 end

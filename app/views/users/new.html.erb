@@ -11,17 +11,20 @@
           <li>That email is already taken</li>
         </ul>
 
-        <form>
+        <form action="/users" method="POST">
           <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="text" placeholder="Username" />
+            <input class="form-control form-control-lg" type="text" placeholder="Username" name="user[name]"/>
           </fieldset>
           <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="text" placeholder="Email" />
+            <input class="form-control form-control-lg" type="text" placeholder="Email" name="user[email]" />
           </fieldset>
           <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="password" placeholder="Password" />
+            <input class="form-control form-control-lg" type="password" placeholder="Password" name="user[password]" />
           </fieldset>
-          <button class="btn btn-lg btn-primary pull-xs-right">Sign up</button>
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="password" placeholder="Password" name="user[password_confirmation]" />
+          </fieldset>
+          <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Sign up</button>
         </form>
       </div>
     </div>

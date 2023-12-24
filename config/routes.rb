@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete "/articles/:id", to: "articles#destroy"
 
   get "/signup", to: "users#new"
+  post "/users", to: "users#create"
 end

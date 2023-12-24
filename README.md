@@ -1,24 +1,20 @@
-# README
+# Conduit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Conduit は RealWorld で作成する Medium.com のクローンサイトです。  
 
-Things you may want to cover:
+[Conduit](https://demo.realworld.io/)  
+[RealWorld](https://github.com/gothinkster/realworld)  
 
-* Ruby version
+## 機能
 
-* System dependencies
+### 実装済みの機能
 
-* Configuration
+- 記事の表示/作成/編集/削除
+- ユーザーの作成
 
-* Database creation
+### 実装していない機能
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ユーザーの表示/編集/削除
+- 認証機能
+- 記事につけるタグに関する機能
+- コメントの表示/作成/編集/削除

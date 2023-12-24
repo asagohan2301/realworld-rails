@@ -1,0 +1,36 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Sign up</h1>
+        <p class="text-xs-center">
+          <a href="/login">Have an account?</a>
+        </p>
+
+        <% if @error_messages %>
+          <ul class="error-messages">
+            <% @error_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <form action="/users" method="POST">
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="text" placeholder="Username" name="user[name]"/>
+          </fieldset>
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="text" placeholder="Email" name="user[email]" />
+          </fieldset>
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="password" placeholder="Password" name="user[password]" />
+          </fieldset>
+          <fieldset class="form-group">
+            <input class="form-control form-control-lg" type="password" placeholder="Password" name="user[password_confirmation]" />
+          </fieldset>
+          <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get "/articles/:id/edit", to: "articles#edit"
   patch "/articles/:id", to: "articles#update"
   delete "/articles/:id", to: "articles#destroy"
+
+  get "/signup", to: "users#new"
+  post "/users", to: "users#create"
 end
